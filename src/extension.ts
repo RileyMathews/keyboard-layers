@@ -1,6 +1,9 @@
 import * as vscode from 'vscode';
+import KeyboardLayer from './keyboard-layer'
 
 export function activate(context: vscode.ExtensionContext) {
+
+	const app = new KeyboardLayer
 
 	// The command has been defined in the package.json file
 	// Now provide the implementation of the command with registerCommand
@@ -16,8 +19,18 @@ export function activate(context: vscode.ExtensionContext) {
 		vscode.window.showInformationMessage('Turning off keyboard layer');
 	});
 
+	let toggleLayer = vscode.commands.registerCommand('keyboardlayer.toggle', () => {
+		app.toggle()
+		if(app.isActive) {
+			vscode.window.showInformationMessage('Layer now active');
+		} else {
+			vscode.window.showInformationMessage('Layer now disabled');
+		}
+	})
+
+	context.subscriptions.push(toggleLayer);
 	context.subscriptions.push(enableLayer);
-	context.subscriptions.push(disableLayer)
+	context.subscriptions.push(disableLayer);
 }
 
 // this method is called when your extension is deactivated

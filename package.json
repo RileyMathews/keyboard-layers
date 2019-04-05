@@ -22,16 +22,24 @@
 			{
 					"command": "keyboardlayer.deactivate",
 					"title": "Deactivate layer"
+			},
+			{
+					"command": "keyboardlayer.toggle",
+					"title": "Toggle layer"
 			}
 		],
 		"keybindings": [
 				{
-						"key": "ctrl+shift+L",
+						"key": "cmd+shift+L",
 						"command": "keyboardlayer.activate"
 				},
 				{
 						"key": "Escape",
 						"command": "keyboardlayer.deactivate"
+				},
+				{
+						"key": "cmd+shift+T",
+						"command": "keyboardlayer.toggle"
 				}
 		]
 	},
