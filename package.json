@@ -16,32 +16,43 @@
 	"contributes": {
 		"commands": [
 			{
-					"command": "keyboardlayer.activate",
-					"title": "Activate layer"
+				"command": "keyboardlayer.activate",
+				"title": "Activate layer"
 			},
 			{
-					"command": "keyboardlayer.deactivate",
-					"title": "Deactivate layer"
+				"command": "keyboardlayer.deactivate",
+				"title": "Deactivate layer"
 			},
 			{
-					"command": "keyboardlayer.toggle",
-					"title": "Toggle layer"
+				"command": "keyboardlayer.toggle",
+				"title": "Toggle layer"
 			}
 		],
 		"keybindings": [
 				{
-						"key": "cmd+shift+L",
-						"command": "keyboardlayer.activate"
+					"key": "cmd+shift+L",
+					"command": "keyboardlayer.activate"
 				},
 				{
-						"key": "Escape",
-						"command": "keyboardlayer.deactivate"
+					"key": "Escape",
+					"command": "keyboardlayer.deactivate"
 				},
 				{
-						"key": "cmd+shift+T",
-						"command": "keyboardlayer.toggle"
+					"key": "ctrl+shift+T",
+					"command": "keyboardlayer.toggle"
 				}
-		]
+		],
+		"configuration": {
+			"type": "object",
+			"title": "keyboard layers configuration",
+			"properties": {
+				"keyboardlayer.active": {
+					"type": "boolean",
+					"default": false,
+					"description": "Test configuration"
+				}
+			}
+		}
 	},
 	"scripts": {
 		"vscode:prepublish": "npm run compile",
