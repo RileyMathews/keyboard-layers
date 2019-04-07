@@ -1,11 +1,18 @@
 import * as vscode from 'vscode'
 
 export default class StatusDisplay {
+    private item: vscode.StatusBarItem
+
+    public constructor() {
+        this.item = vscode.window.createStatusBarItem()
+        this.item.text = "Layer Active"
+    }
+
     public displayEnabled() {
-        vscode.window.showInformationMessage("layer is enabled")
+        this.item.show()
     }
 
     public displayDisabled() {
-        vscode.window.showInformationMessage("layer is disabled")
+        this.item.hide()
     }
 }
