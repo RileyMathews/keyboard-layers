@@ -1,6 +1,6 @@
 import * as vscode from 'vscode'
 
-class StatusDisplay {
+export default class StatusDisplay {
     public displayEnabled() {
         vscode.window.showInformationMessage("layer is enabled")
     }
