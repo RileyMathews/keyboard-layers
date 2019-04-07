@@ -30,18 +30,19 @@
 			}
 		],
 		"keybindings": [
-				{
-					"key": "cmd+shift+L",
-					"command": "keyboardlayer.activate"
-				},
-				{
-					"key": "Escape",
-					"command": "keyboardlayer.deactivate"
-				},
-				{
-					"key": "ctrl+shift+T",
-					"command": "keyboardlayer.toggle"
-				}
+			{
+				"key": "cmd+shift+L",
+				"command": "keyboardlayer.activate"
+			},
+			{
+				"key": "Escape",
+				"command": "keyboardlayer.deactivate",
+				"when": "config.keyboardlayer.active"
+			},
+			{
+				"key": "ctrl+shift+T",
+				"command": "keyboardlayer.toggle"
+			}
 		],
 		"configuration": {
 			"type": "object",
