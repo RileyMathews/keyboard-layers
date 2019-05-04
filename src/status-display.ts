@@ -22,7 +22,6 @@ export default class StatusDisplay {
             "editor.background": this.layerColor,
             "panel.background": this.layerColor
         }, true)
-        console.log(this.previousCustomization)
         this.item.show()
     }
 

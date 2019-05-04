@@ -13,11 +13,15 @@ export default class KeyboardLayer {
   }
 
   public enable() {
-    this.setActive(true);
+    if(!this.isActive) {
+      this.setActive(true);
+    }
   }
 
   public disable() {
-    this.setActive(false);
+    if(this.isActive) {
+      this.setActive(false);
+    }
   }
 
   public toggle() {
@@ -28,5 +32,6 @@ export default class KeyboardLayer {
     const config = vscode.workspace.getConfiguration('keyboardlayer');
     config.update('active', bool, true);
     bool ? this.statusDisplay.displayEnabled() : this.statusDisplay.displayDisabled();
+    this.isActive = bool;
   }
 }
