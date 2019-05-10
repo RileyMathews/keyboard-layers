@@ -1,5 +1,5 @@
-import * as vscode from 'vscode'
-import StatusDisplay from './status-display'
+import * as vscode from 'vscode';
+import StatusDisplay from './status-display';
 
 export default class KeyboardLayer {
   public isActive: boolean;
