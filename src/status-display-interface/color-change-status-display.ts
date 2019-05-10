@@ -1,6 +1,6 @@
 import * as vscode from 'vscode';
 
-export default class StatusDisplay {
+export default class ColorChangeStatusDisplay implements StatusDisplayInterface {
     private item: vscode.StatusBarItem;
     private colorConfiguration!: vscode.WorkspaceConfiguration;
     private previousCustomization!: vscode.WorkspaceConfiguration;

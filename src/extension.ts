@@ -1,6 +1,6 @@
 import * as vscode from 'vscode';
 import KeyboardLayer from './keyboard-layer';
-import StatusDisplay from './status-display';
+import StatusDisplay from './status-display-interface/color-change-status-display';
 
 
 export function activate(context: vscode.ExtensionContext) {

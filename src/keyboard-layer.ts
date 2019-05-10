@@ -1,15 +1,14 @@
 import * as vscode from 'vscode';
-import StatusDisplay from './status-display';
 
 export default class KeyboardLayer {
   public isActive: boolean;
   public configuration: vscode.WorkspaceConfiguration;
-  private statusDisplay: StatusDisplay;
+  private statusDisplayInterface: StatusDisplayInterface;
 
-  public constructor (statusDisplay: StatusDisplay) {
+  public constructor (statusDisplayInterface: StatusDisplayInterface) {
     this.isActive = false;
     this.configuration = vscode.workspace.getConfiguration('keyboardlayer');
-    this.statusDisplay = statusDisplay;
+    this.statusDisplayInterface = statusDisplayInterface;
   }
 
   public enable() {
@@ -31,7 +30,7 @@ export default class KeyboardLayer {
   private setActive(bool: boolean) {
     const config = vscode.workspace.getConfiguration('keyboardlayer');
     config.update('active', bool, true);
-    bool ? this.statusDisplay.displayEnabled() : this.statusDisplay.displayDisabled();
+    bool ? this.statusDisplayInterface.displayEnabled() : this.statusDisplayInterface.displayDisabled();
     this.isActive = bool;
   }
 }
