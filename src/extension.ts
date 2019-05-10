@@ -1,11 +1,12 @@
 import * as vscode from 'vscode';
 import KeyboardLayer from './keyboard-layer';
-import StatusDisplay from './status-display-interface/color-change-status-display';
+import ColorChangeStatusDisplay from './status-display-interface/color-change-status-display';
+import StatusBarStatusDisplay from './status-display-interface/status-bar-status-display'
 
 
 export function activate(context: vscode.ExtensionContext) {
 
-	const app = new KeyboardLayer(new StatusDisplay);
+	const app = new KeyboardLayer(new ColorChangeStatusDisplay);
 
 	let enableLayer = vscode.commands.registerCommand('keyboardlayer.activate', () => {
 		app.enable();

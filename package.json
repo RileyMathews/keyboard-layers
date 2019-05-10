@@ -61,6 +61,15 @@
 					"type": "string",
 					"default": "#2f4f6f",
 					"description": "Color for the window when layer is on"
+				},
+				"keyboardlayer.notification": {
+					"type": "string",
+					"default": "Status Bar Icon",
+					"description": "The type of notification to inform when the layer is active",
+					"enum": [
+						"Status Bar Icon",
+						"Theme Color Change"
+					]
 				}
 			}
 		}

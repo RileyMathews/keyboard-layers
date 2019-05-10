@@ -1,15 +1,12 @@
 import * as vscode from 'vscode';
 
 export default class ColorChangeStatusDisplay implements StatusDisplayInterface {
-    private item: vscode.StatusBarItem;
     private colorConfiguration!: vscode.WorkspaceConfiguration;
     private previousCustomization!: vscode.WorkspaceConfiguration;
     private layerColor: String;
 
     public constructor() {
         this.colorConfiguration = vscode.workspace.getConfiguration();
-        this.item = vscode.window.createStatusBarItem();
-        this.item.text = "Layer Active",
         this.layerColor = vscode.workspace.getConfiguration('keyboardlayer').get('layerColor', '#2f4f6f');
     }
 
@@ -22,11 +19,9 @@ export default class ColorChangeStatusDisplay implements StatusDisplayInterface 
             "editor.background": this.layerColor,
             "panel.background": this.layerColor
         }, true);
-        this.item.show();
     }
 
     public displayDisabled() {
         this.colorConfiguration.update('workbench.colorCustomizations', this.previousCustomization, true);
-        this.item.hide();
     }
 }
