@@ -19,6 +19,10 @@ To add a keybinding specific to the layer, add the following JSON object to your
 ]
 ```
 
+## Configuration
+
+You can configure the way the app displays layer status, the current options are a configurable theme color change, or a status bar text notification. 
+
 ### Customizing layer color change
 By default, the extension will change the color of multiple parts of your workspace to let you know the extension is active. To customize this color, add the following configuration.
 ```

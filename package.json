@@ -3,7 +3,7 @@
 	"displayName": "Keyboard Layers",
 	"description": "Keyboard layers lets you add keybind layers that you can activate and deactivate at will.",
 	"publisher": "rileymathews",
-	"version": "0.1.3",
+	"version": "0.2.0",
 	"engines": {
 		"vscode": "^1.33.0"
 	},
