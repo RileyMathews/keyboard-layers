@@ -1,16 +1,20 @@
 import * as vscode from 'vscode';
+import ConfigurationLoader from '../configuration-loader';
 
 export default class ColorChangeStatusDisplay implements StatusDisplayInterface {
     private colorConfiguration!: vscode.WorkspaceConfiguration;
     private previousCustomization!: vscode.WorkspaceConfiguration;
     private layerColor: String;
+    private config: ConfigurationLoader;
 
-    public constructor() {
+    public constructor(configuration: ConfigurationLoader) {
         this.colorConfiguration = vscode.workspace.getConfiguration();
-        this.layerColor = vscode.workspace.getConfiguration('keyboardlayer').get('layerColor', '#2f4f6f');
+        this.config = configuration;
+        this.layerColor = configuration.loadConfiguration().config.get('layerColor', '#2f4f6f')
     }
 
     public displayEnabled() {
+        this.layerColor = this.config.loadConfiguration().config.get('layerColor', '#2f4f6f')
         this.previousCustomization = vscode.workspace.getConfiguration('workbench.colorCustomizations');
         this.colorConfiguration.update('workbench.colorCustomizations', {
             "statusBar.background": this.layerColor,
