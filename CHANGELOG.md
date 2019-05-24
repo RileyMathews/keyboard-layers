@@ -4,6 +4,10 @@ All notable changes to the "keyboard-layers" extension will be documented in thi
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
+## 0.2.1
+### Fixed
+- The extension should now correctly install as a ui extension for those using remote development.
+
 ## 0.2.0
 ### Added
 - The notification for when the layer is active is now customizable.
